@@ -1,22 +1,38 @@
 class Calculadora {
-    somar(a, b) {
-        return a + b;
+    soma(lista){
+        const total = lista.reduce(
+        (acc, atual) => acc + atual, 0,
+        );
+        return total;
     }
-    subtrair(a, b) {
-        return a - b;
+    subtração(lista){
+        const total = lista.reduce(
+        (acc, atual) => acc - atual,
+        );
+        return total;
     }
-    multiplicar(a, b) {
-        return a * b;
+    multiplicação(lista){
+        const total = lista.reduce(
+        (acc, atual) => acc * atual,
+        );
+        return total;
     }
-    dividir(a, b){
-        if (b == 0){
+    divisão(lista){
+        const divisores = lista.slice(1);
+        if (divisores.includes(0)){
             throw new Error('Não é possível dividir por zero');
         }
-        return a / b;
+        const total = lista.reduce(
+        (acc, atual) => acc / atual,
+        );
+        return total;
     }
-    potenciar(a, b){
-        return a ** b;
+    potenciação(lista){
+        const total = lista.reduce(
+        (acc, atual) => acc ** atual,
+        );
+        return total;
     }
-  }
-  
-  export default Calculadora;
+}
+
+export default Calculadora;
